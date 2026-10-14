@@ -81,13 +81,23 @@ customer-churn-prediction/
 ├── src/
 │   ├── train_final_model.py
 │   └── test_saved_model.py
-├── notebooks/
-├── saved_models/
-├── data.csv
+├── customer-churn.py
 ├── requirements.txt
-├── .gitignore
-└── README.md
+├── README.md
+└── .gitignore
 ```
+
+### Main Files
+
+- **`customer-churn.py`** — Exploratory data analysis, experimentation with multiple machine learning models, and threshold comparison.
+- **`src/train_final_model.py`** — Trains and evaluates the final XGBoost model and saves the model artifacts.
+- **`src/test_saved_model.py`** — Checks that the saved model loads correctly and that its feature count matches the saved feature list.
+- **`requirements.txt`** — Lists the Python dependencies required to run the project.
+- **`data.csv`** — The dataset must be downloaded separately and placed in the project root.
+- **`saved_models/`** — Contains the trained model and supporting files generated during training. These files are excluded from Git.
+```
+
+
 
 ## Installation
 
