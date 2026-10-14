@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.ipynb_checkpoints/
+.vscode/
+
+# Dataset
+data.csv
+
+# Trained model artifacts
+saved_models/
+
+st - Copy.py
