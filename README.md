@@ -7,11 +7,22 @@ This project uses machine learning to predict customer churn for a telecommunica
 Customer churn can affect business revenue and long-term growth. By analyzing customer demographics, service subscriptions, contract types, and billing information, this project builds a classification model to identify customers at risk of leaving.
 
 ## Dataset
-The project uses a Telco Customer Churn dataset containing customer information, subscribed services, contract details, billing information, and churn labels.
 
-The target variable is `Churn`:
-- `0`: No churn
-- `1`: Churn
+This project uses the Telco Customer Churn dataset.
+
+The dataset contains customer demographics, subscribed services, contract details, billing information, and churn labels.
+
+**Target variable:** `Churn`
+- `0`: Customer did not churn
+- `1`: Customer churned
+
+### Download and Setup
+
+1. Download the Telco Customer Churn dataset from [Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn).
+2. Place the CSV file in the project root directory.
+3. Rename the file to `data.csv`.
+
+The dataset is excluded from this repository through `.gitignore`. You must download it separately before running the training script.
 
 ## Workflow
 1. Data cleaning and preparation
@@ -80,27 +91,45 @@ customer-churn-prediction/
 
 ## Installation
 
-Install the required packages:
+Clone the repository:
+
+```bash
+git clone https://github.com/CatishMobina/customer-churn-prediction.git
+cd customer-churn-prediction
+```
+
+Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Training
+## Training the Model
 
-Run the final training and evaluation script from the project root:
+Make sure `data.csv` is available in the project root directory, then run:
 
 ```bash
 python src/train_final_model.py
 ```
 
-The script saves the trained model, feature column names, and classification threshold in the `saved_models/` directory.
+The script trains an XGBoost classifier, evaluates its performance on the test set, and saves the model artifacts in `saved_models/`.
 
-## Verify Saved Artifacts
+Generated files:
+- `xgb_model.pkl`
+- `feature_columns.pkl`
+- `threshold.pkl`
+
+These files are excluded from GitHub through `.gitignore` and are generated locally during training.
+
+## Testing the Saved Model
+
+After training the model, run:
 
 ```bash
 python src/test_saved_model.py
 ```
+
+This script verifies that the saved model and its feature configuration can be loaded successfully.
 
 ## Limitations
 - Model performance depends on the dataset and may not generalize to other companies or time periods.
